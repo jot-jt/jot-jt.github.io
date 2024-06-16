@@ -1,0 +1,15 @@
+- id: doppelgangers
+  title: "Doppelgangers: Learning to Disambiguate Images of Similar Structures"
+  venue: ICCV, 2023
+  description: "Learning to classify images that depict the same or different structure."
+  project_page: https://doppelgangers-3d.github.io/
+  arxiv: 2309.02420
+  image: reconfusion_before.png
+  image_mouseover: reconfusion_after.mp4
+  authors:
+    - ruojin
+    - joseph
+    - qianqian
+    - hadar
+    - bharath
+    - snavely

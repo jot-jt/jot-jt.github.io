@@ -1,0 +1,35 @@
+# abbr:
+#   first_name:  
+#   middle_name: 
+#   last_name: 
+#   website:
+
+joseph:
+    first_name: Joseph
+    last_name: Tung
+    website: jot-jt.github.io
+  
+ruojin:
+    first_name: Ruojin
+    last_name: Cai
+    website: https://www.cs.cornell.edu/~ruojin/
+
+qianqian:
+    first_name: Qianqian
+    last_name: Wang
+    website: https://qianqianwang68.github.io/
+
+hadar:
+    first_name: Hadar
+    last_name: Averbuch-Elor
+    website: https://www.elor.sites.tau.ac.il/
+  
+bharath:
+    first_name: Bharath
+    last_name: Harharan
+    website: https://www.cs.cornell.edu/~bharathh/
+
+snavely:
+    first_name: Noah
+    last_name: Snavely
+    website: https://www.cs.cornell.edu/~snavely/

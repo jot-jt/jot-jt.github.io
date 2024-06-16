@@ -69,3 +69,7 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Gem
+Gemfile
+Gemfile.lock

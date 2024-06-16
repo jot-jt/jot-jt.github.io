@@ -16,6 +16,7 @@
 }
 
 .footer .footer-links a {
+    margin-top: auto;
     font-size: 25px;
     color: #000;
 }
@@ -106,4 +107,14 @@
     html, body {
         min-height: 100%;
     }
+}
+
+body {
+    display: flex; /* Enable Flexbox layout */
+    flex-direction: column; /* Arrange content vertically */
+    min-height: 100vh; /* Ensure body fills at least the viewport height */
+  }
+  
+main { /* or whatever wraps your main content */
+    flex: 1;  /* Allow main content to grow and fill the available space */
 }

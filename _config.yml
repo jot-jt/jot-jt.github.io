@@ -23,12 +23,11 @@ name: Joseph Tung
 position: Incoming PhD Student
 email: jt664@cornell.edu
 description: >-
-  I am an incoming CS Ph.D. student at [NYU Courant](https://cs.nyu.edu/home/index.html),
-  advised by [Prof. David Fouhey](https://cs.nyu.edu/~fouhey/).
-  My interests focus on 3D computer vision and reconstruction.
-
-  I received a B.S. Computer Science at [Cornell University](https://www.cs.cornell.edu/), where I am currently advised by
+  I am an incoming CS Ph.D. student at NYU Courant,
+  where I will be advised by [Prof. David Fouhey](https://cs.nyu.edu/~fouhey/).
+  I received my Bachelor's in Computer Science at Cornell University, advised by
   [Prof. Noah Snavely](https://www.cs.cornell.edu/~snavely/).
+  My interests are in 3D computer vision and reconstruction.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jt_tung

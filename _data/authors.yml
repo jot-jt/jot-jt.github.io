@@ -8,6 +8,7 @@ joseph:
     first_name: Joseph
     last_name: Tung
     website: jot-jt.github.io
+    is_me: true
   
 ruojin:
     first_name: Ruojin
@@ -33,3 +34,23 @@ snavely:
     first_name: Noah
     last_name: Snavely
     website: https://www.cs.cornell.edu/~snavely/
+
+gene:
+    first_name: Gene
+    last_name: Chou
+    website: https://genechou.com/
+
+kai:
+    first_name: Kai
+    last_name: Zhang
+    website: https://kai-46.github.io/website/
+
+guandao:
+    first_name: Guandao
+    last_name: Yang
+    website: https://www.guandaoyang.com/
+
+gordon:
+    first_name: Gordon
+    last_name: Wetzstein
+    website: https://stanford.edu/~gordonwz/

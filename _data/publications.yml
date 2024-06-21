@@ -1,7 +1,27 @@
+- id: megascenes
+  title: "MegaScenes: Scene-Level View Synthesis at Scale"
+  venue: arXiv, 2024
+  description: "We create an extensive scene-level dataset of 100k SfM reconstructions and 2M images. We demonstrate its effectiveness in training large-scale, generalizable models in single-image novel view synthesis."
+  project_page: https://megascenes.github.io/
+  arxiv: 2406.11819
+  image: megascenes.png
+  authors:
+    - joseph
+    - gene
+    - ruojin
+    - guandao
+    - kai
+    - gordon
+    - bharath
+    - snavely
+  co_first:
+    - joseph
+    - gene
+
 - id: doppelgangers
   title: "Doppelgangers: Learning to Disambiguate Images of Similar Structures"
   venue: ICCV, 2023
-  description: "Learning to classify images that depict the same or different structure."
+  description: "We learn to classify images that depict the same or different structure to tackle the disambiguation problem in image matching."
   project_page: https://doppelgangers-3d.github.io/
   arxiv: 2309.02420
   image: doppelgangers.png

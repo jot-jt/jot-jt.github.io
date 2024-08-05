@@ -1,6 +1,6 @@
 - id: megascenes
   title: "MegaScenes: Scene-Level View Synthesis at Scale"
-  venue: arXiv, 2024
+  venue: ECCV, 2024
   description: "We create an extensive scene-level dataset of 100k SfM reconstructions and 2M images. We demonstrate its effectiveness in training large-scale, generalizable models in single-image novel view synthesis."
   project_page: https://megascenes.github.io/
   arxiv: 2406.11819

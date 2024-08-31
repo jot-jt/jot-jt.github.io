@@ -21,9 +21,9 @@
 - id: doppelgangers
   title: "Doppelgangers: Learning to Disambiguate Images of Similar Structures"
   venue: ICCV, 2023
-  description: "We learn to classify images that depict the same or different structure to tackle the disambiguation problem in image matching."
-  project_page: https://doppelgangers-3d.github.io/
-  arxiv: 2309.02420
+  description: "We train a model to disambiguate \"doppelganger\" image pairs that depict distinct, but visually similar structures to improve reconstruction quality in structure from motion."
+  project_page: https://doppelgangers-3d.github.io
+  arxiv: "2309.02420"
   image: doppelgangers.png
   authors:
     - ruojin

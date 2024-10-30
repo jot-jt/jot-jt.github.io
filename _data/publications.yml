@@ -20,7 +20,7 @@
 
 - id: doppelgangers
   title: "Doppelgangers: Learning to Disambiguate Images of Similar Structures"
-  venue: ICCV, 2023
+  venue: ICCV, 2023 (Oral)
   description: "We train a model to disambiguate \"doppelganger\" image pairs that depict distinct, but visually similar structures to improve reconstruction quality in structure from motion."
   project_page: https://doppelgangers-3d.github.io
   arxiv: "2309.02420"

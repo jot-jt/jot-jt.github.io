@@ -23,11 +23,11 @@ name: Joseph Tung
 position: PhD Student
 email: joseph.tung@nyu.edu
 description: >-
-  I am an first-year CS Ph.D. student at NYU Courant,
+  I am an CS Ph.D. student at [NYU Courant](https://cs.nyu.edu/home/index.html),
   advised by [Prof. David Fouhey](https://cs.nyu.edu/~fouhey/).
   I received my Bachelor's in Computer Science at Cornell University, advised by
   [Prof. Noah Snavely](https://www.cs.cornell.edu/~snavely/).
-  My interests are in 3D computer vision and reconstruction.
+  My interests are in 3D computer vision, specifically scene-level reconstruction and generation.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jt_tung

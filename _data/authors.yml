@@ -54,3 +54,28 @@ gordon:
     first_name: Gordon
     last_name: Wetzstein
     website: https://stanford.edu/~gordonwz/
+
+cnris:
+    first_name: Chris
+    last_name: Rockwell
+    website: https://crockwell.github.io/
+
+tsungyi:
+    first_name: Tsung-Yi
+    last_name: Lin
+    website: https://tsungyilin.info/
+
+mingyu:
+    first_name: Ming-Yu
+    last_name: Liu
+    website: https://mingyuliu.net/
+
+fouhey:
+    first_name: David
+    last_name: Fouhey
+    website: https://cs.nyu.edu/~fouhey/
+
+chenhsuan:
+    first_name: Chen-Hsuan
+    last_name: Lin
+    website: https://chenhsuanlin.bitbucket.io/

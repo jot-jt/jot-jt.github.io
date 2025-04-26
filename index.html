@@ -35,7 +35,6 @@ layout: null
 </head>
 
 <body>
-  
   <main>
     <section class="hero">
       <div class="hero-body container is-max-desktop">
@@ -88,13 +87,14 @@ layout: null
       </div>
     </section>
 
-    <!-- News. -->
+    <!-- Divider. -->
     <div class="hr">
       <div class="container">
         <hr>
       </div>
     </div>
 
+    <!-- News. -->
     <section class="section">
       <div class="container is-max-desktop">
 
@@ -114,7 +114,7 @@ layout: null
         {% for publication in site.data.publications %}
         <div class="publication-block columns">
 
-          <div class="column is-2">
+          <div class="column is-3">
             <div class="publication-image {% if publication.image_mouseover %}publication-mousecell{% endif %}">
               {% if publication.image_mouseover contains "mp4" %}
               <video autoplay preload playsinline class="" height="100%" loop muted width="100%">
@@ -163,10 +163,22 @@ layout: null
                   <span class="icon"><i class="ai ai-arxiv"></i></span>
                   <span>arXiv</span>
                 </a>
-                {% if publication.github %}
-                <a class="external-link button is-small is-ghost" href="https://github.com/{{ publication.github }}">
-                  <span class="icon"><i class="fa fab fa-github"></i></span>
+                {% if publication.code %}
+                <a class="external-link button is-small is-ghost" href="{{ publication.code }}">
+                  <span class="icon"><i class="fab fa-github"></i></span>
                   <span>Code</span>
+                </a>
+                {% endif %}
+                {% if publication.dataset %}
+                <a class="external-link button is-small is-ghost" href="{{ publication.dataset }}">
+                  <span class="icon"><i class="fas fa-database"></i></span>
+                  <span>Dataset</span>
+                </a>
+                {% endif %}
+                {% if publication.web-viewer %}
+                <a class="external-link button is-small is-ghost" href="{{ publication.web-viewer }}">
+                  <span class="icon"><i class="fas fa-eye"></i></span>
+                  <span>Web-Viewer</span>
                 </a>
                 {% endif %}
               </div>
@@ -197,7 +209,7 @@ layout: null
         <div class="column is-8">
           <div class="content">
             <p>
-              Thanks to Keunhong Park for the <a href="https://github.com/keunhong/keunhong.github.io">template</a>.
+              Thanks to <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://github.com/keunhong/keunhong.github.io">template</a>.
             </p>
           </div>
         </div>

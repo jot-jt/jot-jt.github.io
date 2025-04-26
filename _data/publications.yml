@@ -1,7 +1,26 @@
+- id: dynpose
+  title: "Dynamic Camera Poses and Where to Find Them"
+  venue: CVPR 2025
+  description: "We create a large-scale, high-quality dataset of dynamic camera poses from 100K internet videos."
+  project_page: https://research.nvidia.com/labs/dir/dynpose-100k/
+  dataset: https://huggingface.co/datasets/nvidia/dynpose-100k
+  arxiv: 2504.17788
+  image: dynpose.jpg
+  authors:
+    - cnris
+    - joseph
+    - tsungyi
+    - mingyu
+    - fouhey
+    - chenhsuan
+
 - id: megascenes
   title: "MegaScenes: Scene-Level View Synthesis at Scale"
-  venue: ECCV, 2024
-  description: "We create an extensive scene-level dataset of 100k SfM reconstructions and 2M images. We demonstrate its effectiveness in training large-scale, generalizable models in single-image novel view synthesis."
+  venue: ECCV 2024
+  description: "We create a dataset of 100K SfM reconstructions from 2M internet photos around the world. We use it to train a model for scene-level novel-view synthesis."
+  dataset: https://github.com/MegaScenes/dataset
+  code: https://github.com/MegaScenes/nvs
+  web-viewer: https://megascenes.github.io/web-viewer/
   project_page: https://megascenes.github.io/
   arxiv: 2406.11819
   image: megascenes.png
@@ -20,11 +39,12 @@
 
 - id: doppelgangers
   title: "Doppelgangers: Learning to Disambiguate Images of Similar Structures"
-  venue: ICCV, 2023 (Oral)
-  description: "We train a model to disambiguate \"doppelganger\" image pairs that depict distinct, but visually similar structures to improve reconstruction quality in structure from motion."
+  venue: ICCV 2023 (Oral)
+  description: "We train a classifier to disambiguate images that depict distinct, but visually similar structures, which we coin as \"doppelgangers\". We use this classifier to improve reconstruction quality in structure-from-motion."
   project_page: https://doppelgangers-3d.github.io
   arxiv: "2309.02420"
   image: doppelgangers.png
+  code: https://github.com/RuojinCai/Doppelgangers
   authors:
     - ruojin
     - joseph

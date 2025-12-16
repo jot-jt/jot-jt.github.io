@@ -1,3 +1,19 @@
+- id: emergent
+  title: "Emergent Extreme-View Geometry in 3D Foundation Models"
+  venue: 
+  description: "We create a lightweight fine-tuning method for 3D foundation models to improve extreme-view geometry estimation, and release benchmarks for hard unconstrained image collections."
+  project_page: https://cornell-vailab.github.io/Ext-3DFMs/
+  dataset:
+  code: 
+  arxiv: 2511.22686
+  image: emergentextreme.png
+  authors:
+    - evanz
+    - joseph
+    - ruojin
+    - fouhey
+    - hadar
+
 - id: dynpose
   title: "Dynamic Camera Poses and Where to Find Them"
   venue: CVPR 2025

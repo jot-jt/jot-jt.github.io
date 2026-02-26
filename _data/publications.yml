@@ -1,10 +1,10 @@
 - id: emergent
   title: "Emergent Extreme-View Geometry in 3D Foundation Models"
-  venue: 
+  venue: CVPR 2026
   description: "We create a lightweight fine-tuning method for 3D foundation models to improve extreme-view geometry estimation, and release benchmarks for hard unconstrained image collections."
   project_page: https://cornell-vailab.github.io/Ext-3DFMs/
-  dataset:
-  code: 
+  dataset: https://huggingface.co/datasets/cornell-vailab/megaunscene
+  code: https://github.com/theREALevan/extreme-view-3dfm
   arxiv: 2511.22686
   image: emergentextreme.png
   authors:

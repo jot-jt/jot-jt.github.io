@@ -36,11 +36,11 @@ layout: null
 
 <body>
   <main>
-    <section class="hero">
+    <section class="hero intro-section">
       <div class="hero-body container is-max-desktop">
         <div class="columns is-vcentered">
 
-          <div class="column is-4">
+          <div class="column is-4-tablet is-3-desktop">
             <div class="portrait">
               <img src="{{ '/images/portrait.jpg' | relative_url }}" />
             </div>
@@ -51,7 +51,7 @@ layout: null
               <b>Hello, I'm {{ site.name }}!</b>
             </h1>
             <div class="content has-text-justified">
-              {{ site.description | markdownify }}
+              {{ site.data.profile.bio | markdownify }}
               <div class="buttons">
                 <!-- <a class="external-link button is-light" href="cv.html">
                   <span class="icon"><i class="fas fa-file"></i></span>
@@ -85,14 +85,16 @@ layout: null
           </div>
         </div>
 
-        <div class="content has-text-justified research-interests">
-          <h2 class="title is-4">Research Interests</h2>
-          <p>
-            My research focuses on 3D computer vision for understanding and reconstructing real-world
-            scenes from large, unconstrained image and video collections. I am especially interested 
-            in scalable learned systems that turn internet-scale visual data into accurate, generalizable
-            3D representations of the world.
-          </p>
+        <div class="research-interests">
+          <div class="content research-interests-inner">
+            <h2 class="title is-4 section-title">Research Interests</h2>
+            <p>
+              My research focuses on 3D computer vision for understanding and reconstructing real-world
+              scenes from large, unconstrained image and video collections. I am especially interested
+              in scalable learned systems that turn internet-scale visual data into accurate, generalizable
+              3D representations of the world.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -108,23 +110,24 @@ layout: null
     <section class="section">
       <div class="container is-max-desktop">
 
-        <h2 class="title is-3">News</h2>
-        <div class="content">
+        <h2 class="title is-3 section-title">News</h2>
+        <div class="content news-list">
           <ul>
             {% for news in site.data.news %}
             <li>
-              <b>{{ news.date }}</b>: {{ news.description | markdownify | remove: '<p>' | remove: '</p>' }}
+              <b>{{ news.date }}</b>
+              <span>{{ news.description | markdownify | remove: '<p>' | remove: '</p>' }}</span>
             </li>
             {% endfor %}
           </ul>
         </div>
 
-        <h2 class="title is-3">Publications</h2>
+        <h2 class="title is-3 section-title">Publications</h2>
 
         {% for publication in site.data.publications %}
         <div class="publication-block columns">
 
-          <div class="column is-3">
+          <div class="column is-4-tablet is-3-desktop publication-media-column">
             <div class="publication-image {% if publication.image_mouseover %}publication-mousecell{% endif %}">
               {% if publication.image_mouseover contains "mp4" %}
               <video autoplay preload playsinline class="" height="100%" loop muted width="100%">
@@ -155,7 +158,7 @@ layout: null
               <div class="publication-venue">
                 <span>{{ publication.venue }}</span>
                 {% for award in publication.awards %}
-                  <span class="publication-venue-emph">{{ award }}<span>
+                  <span class="publication-venue-emph">{{ award }}</span>
                 {% endfor %}
               </div>
               <p class="publication-description">{{ publication.description }}</p>
@@ -203,27 +206,27 @@ layout: null
 
 
   <footer class="footer">
-    <div class="container">
-      <div class="content footer-links has-text-centered">
-        <a href="mailto:{{ site.email }}">
+    <div class="container is-max-desktop footer-inner">
+      <div>
+        <strong>{{ site.name }}</strong>
+        <p>3D computer vision · NYU Courant</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="mailto:{{ site.email }}" aria-label="Email">
           <i class="fas fa-envelope"></i>
         </a>
-        <a class="external-link" href="https://github.com/{{ site.github_username }}">
+        <a class="external-link" href="https://github.com/{{ site.github_username }}" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
-        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}">
+        <a class="external-link" href="https://scholar.google.com/citations?user={{ site.google_scholar }}" aria-label="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
       </div>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              Thanks to <a href="https://keunhong.com/">Keunhong Park</a> for the <a href="https://github.com/keunhong/keunhong.github.io">template</a>.
-            </p>
-          </div>
-        </div>
-      </div>
+
+      <p class="footer-credit">
+        Adapted from <a href="https://github.com/keunhong/keunhong.github.io">Keunhong Park's template</a>.
+      </p>
     </div>
   </footer>
 

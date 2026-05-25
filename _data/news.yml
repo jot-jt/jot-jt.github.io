@@ -1,3 +1,6 @@
+- date: February 2026
+  description: We released <a href="https://cornell-vailab.github.io/Ext-3DFMs/">Emergent Extreme-View Geometry in 3D Foundation Models</a> and the <a href="https://huggingface.co/datasets/cornell-vailab/megaunscene">MegaUnScene</a> dataset!
+
 - date: April 2025
   description: The <a href="https://research.nvidia.com/labs/dir/dynpose-100k/">DynPose-100K</a> dataset is now available for download!
 

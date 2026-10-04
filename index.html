@@ -9,6 +9,8 @@ layout: null
 
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>{{ site.name }}</title>
+  <meta name="color-scheme" content="light dark">
+  <script src="{{ '/js/theme.js' | relative_url }}"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
   <script>
@@ -38,6 +40,11 @@ layout: null
   <main>
     <section class="hero intro-section">
       <div class="hero-body container is-max-desktop">
+        <div class="theme-controls">
+          <button class="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" title="Toggle dark mode" hidden>
+            <span aria-hidden="true">◐</span>
+          </button>
+        </div>
         <div class="columns is-vcentered">
 
           <div class="column is-4-tablet is-3-desktop">
@@ -53,11 +60,6 @@ layout: null
             <div class="content has-text-justified">
               {{ site.data.profile.bio | markdownify }}
               <div class="buttons">
-                <!-- <a class="external-link button is-light" href="cv.html">
-                  <span class="icon"><i class="fas fa-file"></i></span>
-                  <span>CV</span>
-                </a> -->
-
                 <a class="external-link button is-light"
                   href="mailto:{{ site.email }}">
                   <span class="icon"><i class="fas fa-envelope"></i></span>
@@ -223,7 +225,7 @@ layout: null
       </div>
 
       <p class="footer-credit">
-        Adapted from <a href="https://github.com/keunhong/keunhong.github.io">Keunhong Park's template</a>.
+        Adapted from <a href="https://keunhong.com/">Keunhong Park</a>'s website.
       </p>
     </div>
   </footer>

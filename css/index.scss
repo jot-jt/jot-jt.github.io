@@ -4,6 +4,12 @@
 @import "base";
 
 :root {
+    color-scheme: light;
+    --intro: #f0f5fb;
+    --hover-surface: #f7f9fc;
+    --hover-border: #b8c7da;
+    --link-border: #c9d9eb;
+    --on-accent: #ffffff;
     --page: #ffffff;
     --page-deep: #f5f7fa;
     --surface: #ffffff;
@@ -15,6 +21,76 @@
     --accent-soft: #eaf1fb;
     --body-ink: #343b45;
     --dots-color: rgba(36, 93, 168, 0.23);
+}
+
+@mixin dark-palette {
+    color-scheme: dark;
+    --page: #111923;
+    --page-deep: #0d141d;
+    --surface: #1b2735;
+    --intro: #152232;
+    --ink: #edf3fa;
+    --body-ink: #cdd7e3;
+    --muted: #a5b3c4;
+    --soft: #344457;
+    --accent: #8bbcff;
+    --accent-hover: #b4d3ff;
+    --accent-soft: #253c59;
+    --dots-color: rgba(139, 188, 255, 0.28);
+    --hover-surface: #26374b;
+    --hover-border: #6b87a8;
+    --link-border: #486483;
+    --on-accent: #111923;
+}
+
+:root[data-theme="dark"] {
+    @include dark-palette;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        @include dark-palette;
+    }
+}
+
+.theme-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.theme-toggle[hidden] {
+    display: none;
+}
+
+.theme-toggle:hover {
+    color: var(--accent);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+
+strong, .content h1, .content h2, .content h3 {
+    color: var(--ink);
 }
 
 html {
@@ -65,7 +141,7 @@ a:hover {
 .intro-section {
     position: relative;
     isolation: isolate;
-    background-color: #f0f5fb;
+    background-color: var(--intro);
     background-image: radial-gradient(circle, var(--dots-color) 1px, transparent 1px);
     background-size: 24px 24px;
     border-top: 4px solid var(--accent);
@@ -144,8 +220,8 @@ a:hover {
 
 .button.is-light:hover,
 .button.is-ghost:hover {
-    border-color: #b8c7da;
-    background: #f7f9fc;
+    border-color: var(--hover-border);
+    background: var(--hover-surface);
     color: var(--accent);
     text-decoration: none;
 }
@@ -366,14 +442,14 @@ a:hover {
 }
 
 .publication-links .button {
-    border-color: #c9d9eb;
+    border-color: var(--link-border);
     color: var(--accent);
 }
 
 .publication-links .button:first-child {
     background: var(--accent);
     border-color: var(--accent);
-    color: #ffffff;
+    color: var(--on-accent);
 }
 
 .publication-links .button .icon {
@@ -433,8 +509,8 @@ a:hover {
 }
 
 .footer .footer-links a:hover {
-    border-color: #b8c7da;
-    background: #f7f9fc;
+    border-color: var(--hover-border);
+    background: var(--hover-surface);
     color: var(--accent);
     text-decoration: none;
 }

@@ -41,6 +41,7 @@ sass:
 exclude:
   - _site/
   - theme-picker.html
+  - background-picker.html
   - work/
   - _preview_site/
   - _config.preview.yml

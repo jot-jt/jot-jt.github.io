@@ -1,0 +1,7 @@
+# Local editing preview. Never use this configuration for deployment.
+destination: _preview_site
+exclude:
+  - _site/
+  - work/
+  - _preview_site/
+  - _config.preview.yml

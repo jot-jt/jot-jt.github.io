@@ -1,5 +1,6 @@
 .idea
 _site/
+_preview_site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata

@@ -37,6 +37,14 @@ plugins:
 sass:
   style: compact
 
+# Editing tools are available only with _config.preview.yml.
+exclude:
+  - _site/
+  - theme-picker.html
+  - work/
+  - _preview_site/
+  - _config.preview.yml
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

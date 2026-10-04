@@ -1,0 +1,120 @@
+<div id="palette-comparison">
+  <div class="palette-grid" aria-label="Website palette comparisons"></div>
+</div>
+<style>
+  #palette-comparison { font-family:Arial,sans-serif; padding:20px; max-width:1000px; margin:auto; }
+  #palette-comparison .palette-controls { display:flex; gap:18px; flex-wrap:wrap; align-items:center; margin-bottom:20px; }
+  #palette-comparison .palette-controls label { display:flex; align-items:center; gap:8px; }
+  #palette-comparison .palette-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+  #palette-comparison .palette-label { margin:0 0 8px; }
+  #palette-comparison .site-preview { --site-blue:#245da8; --site-secondary:#147d83; --site-tint:10%; background:#fff; color:#172b46; font-family:Arial,sans-serif; border:1px solid #dce5ed; border-radius:8px; overflow:hidden; }
+  #palette-comparison .site-hero { padding:24px 20px 20px; border-top:4px solid var(--site-blue); background-color:#f0f5fb; background-image:radial-gradient(circle,color-mix(in srgb,var(--site-blue) 23%,transparent) 1px,transparent 1px); background-size:24px 24px; }
+  #palette-comparison .site-hero h2 { font-size:23px; line-height:1.15; font-weight:700; margin:0 0 12px; color:#172b46; }
+  #palette-comparison .site-preview p { font-size:14px; line-height:1.6; margin:0 0 14px; }
+  #palette-comparison .site-links { color:var(--site-blue); font-size:13px; margin-bottom:18px; }
+  #palette-comparison .site-research { padding:14px; border-left:4px solid var(--site-secondary); background:color-mix(in srgb,var(--site-secondary) var(--site-tint),#fff); border-radius:0 6px 6px 0; }
+  #palette-comparison .site-preview h3 { font-size:16px; font-weight:700; margin:0 0 10px; line-height:1.3; color:#172b46; }
+  #palette-comparison .site-preview h3::after { content:''; display:block; background:var(--site-secondary); width:30px; height:3px; margin-top:7px; }
+  #palette-comparison .site-research p { margin:0; }
+  #palette-comparison .site-news { padding:20px; }
+  #palette-comparison .site-news p { border-bottom:1px solid #dce5ed; padding-bottom:12px; }
+  #palette-comparison .site-date { color:var(--site-secondary); font-weight:600; }
+  #palette-comparison .site-publication { color:var(--site-blue); font-weight:600; font-size:14px; }
+  #palette-comparison .site-paper-links { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; font-size:12px; }
+  #palette-comparison .site-paper-links span { padding:5px 8px; border:1px solid #c9d9eb; border-radius:4px; color:var(--site-blue); }
+  #palette-comparison .site-paper-links span:first-child { background:var(--site-blue); color:#fff; border-color:var(--site-blue); }
+  #palette-comparison .palette-values { display:flex; flex-wrap:wrap; gap:12px; padding:10px 20px; border-top:1px solid #dce5ed; font:12px monospace; color:#62666d; }
+  #palette-comparison .palette-swatch { display:inline-block; width:10px; height:10px; margin-right:5px; border-radius:50%; }
+  @media(max-width:600px) { #palette-comparison .palette-grid { grid-template-columns:1fr; } }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('palette-comparison');
+  const variants = [
+    { name:'Current teal', secondary:'#147d83' },
+    { name:'Subdued teal', secondary:'#507f80' },
+    { name:'Warm amber', secondary:'#946318' },
+    { name:'Slate gray', secondary:'#667487' },
+    { name:'Muted lavender', secondary:'#79669b' }
+  ];
+  const shared = { blue:'#245da8', tint:10 };
+  const saved = window.openai?.widgetState?.modelContent;
+  if (saved?.blue && /^#[0-9a-f]{6}$/i.test(saved.blue)) shared.blue = saved.blue;
+  if (Number.isFinite(saved?.tint)) shared.tint = Math.max(0,Math.min(25,saved.tint));
+  const grid = root.querySelector('.palette-grid');
+  const previews = [];
+  for (const variant of variants) {
+    const remembered = saved?.accents?.[variant.name];
+    if (remembered && /^#[0-9a-f]{6}$/i.test(remembered)) variant.secondary = remembered;
+    const section = document.createElement('section');
+    section.innerHTML = `<h3 class="palette-label">${variant.name}</h3>
+      <div class="site-preview" aria-label="${variant.name} website preview">
+        <div class="site-hero">
+          <h2>Hello, I'm J!</h2>
+          <p>3D computer vision for understanding and reconstructing real-world scenes.</p>
+          <div class="site-links">Email &nbsp; · &nbsp; Scholar &nbsp; · &nbsp; GitHub</div>
+          <div class="site-research"><h3>Research Interests</h3><p>Scalable learned systems that turn image and video collections into accurate 3D representations.</p></div>
+        </div>
+        <div class="site-news"><h3>News</h3><p><span class="site-date">October 2026</span><br>Research updates and new publications.</p><h3>Publications</h3><div class="site-publication">Understanding the world in 3D</div><div class="site-paper-links"><span>Project Page</span><span><i data-lucide="file-text" aria-hidden="true"></i> PDF</span><span>Code</span></div></div>
+        <div class="palette-values"><span class="blue-value"></span><span class="accent-value"></span></div>
+      </div>`;
+    grid.appendChild(section);
+    previews.push({ element:section.querySelector('.site-preview'), variant });
+  }
+  function render() {
+    for (const { element, variant } of previews) {
+      element.style.setProperty('--site-blue',shared.blue);
+      element.style.setProperty('--site-secondary',variant.secondary);
+      element.style.setProperty('--site-tint',shared.tint+'%');
+      element.querySelector('.blue-value').innerHTML = `<i class="palette-swatch" style="background:${shared.blue}"></i>${shared.blue}`;
+      element.querySelector('.accent-value').innerHTML = `<i class="palette-swatch" style="background:${variant.secondary}"></i>${variant.secondary}`;
+    }
+  }
+  function changed() {
+    render();
+    window.openai?.setWidgetState?.({modelContent:{blue:shared.blue,tint:shared.tint,accents:Object.fromEntries(variants.map(v=>[v.name,v.secondary]))}})?.catch(()=>{});
+  }
+  render();
+  if (globalThis.Tweak) {
+    const all = new Tweak({container:root,onChange:changed});
+    all.addColorPicker(shared,'blue',{label:'Main blue'});
+    all.addSlider(shared,'tint',{label:'Accent background strength',min:0,max:25,unit:'%'});
+    for (const {element,variant} of previews) {
+      const tweak = new Tweak({container:element,onChange:changed});
+      tweak.addColorPicker(variant,'secondary',{label:'Accent color',reference:'--site-secondary'});
+    }
+  } else {
+    const controls=document.createElement('div');
+    controls.className='palette-controls';
+    controls.innerHTML='<label>Main blue <input type="color" aria-label="Main blue"></label><label>Accent background <input type="range" min="0" max="25" aria-label="Accent background strength"><output></output></label>';
+    root.prepend(controls);
+    const blue=controls.querySelector('input[type="color"]');
+    const tint=controls.querySelector('input[type="range"]');
+    const output=controls.querySelector('output');
+    blue.value=shared.blue; tint.value=shared.tint; output.textContent=shared.tint+'%';
+    blue.addEventListener('input',()=>{shared.blue=blue.value;changed();});
+    tint.addEventListener('input',()=>{shared.tint=Number(tint.value);output.textContent=shared.tint+'%';changed();});
+    for (const {element,variant} of previews) {
+      const label=document.createElement('label');
+      label.className='palette-controls';
+      label.textContent='Accent color ';
+      const input=document.createElement('input');
+      input.type='color';input.value=variant.secondary;input.setAttribute('aria-label',variant.name+' accent color');
+      input.addEventListener('input',()=>{variant.secondary=input.value;changed();});
+      label.appendChild(input);
+      element.parentElement.insertBefore(label,element);
+    }
+  }
+  window.addEventListener('openai:set_globals',event=>{
+    const state = event.detail?.globals?.widgetState?.modelContent;
+    if (!state) return;
+    if (/^#[0-9a-f]{6}$/i.test(state.blue||'')) shared.blue=state.blue;
+    if (Number.isFinite(state.tint)) shared.tint=Math.max(0,Math.min(25,state.tint));
+    for (const variant of variants) {
+      const color=state.accents?.[variant.name];
+      if (/^#[0-9a-f]{6}$/i.test(color||'')) variant.secondary=color;
+    }
+    render();
+  });
+})();
+</script>

@@ -42,7 +42,7 @@ layout: null
 
           <div class="column is-4-tablet is-3-desktop">
             <div class="portrait">
-              <img src="{{ '/images/portrait.jpg' | relative_url }}" />
+              <img src="{{ '/images/portrait.jpg' | relative_url }}" alt="Portrait of {{ site.name }}" />
             </div>
           </div>
 
@@ -101,9 +101,7 @@ layout: null
 
     <!-- Divider. -->
     <div class="hr">
-      <div class="container">
-        <hr>
-      </div>
+      <hr>
     </div>
 
     <!-- News. -->
@@ -163,7 +161,7 @@ layout: null
               </div>
               <p class="publication-description">{{ publication.description }}</p>
               <!-- Publication Links. -->
-              <div class="publication-links buttons field has-addons">
+              <div class="publication-links buttons">
                 <a class="external-link button is-small is-ghost" href="{{ publication.project_page }}">
                   <span class="icon"><i class="fas fa-globe-asia"></i></span>
                   <span>Project Page</span>
